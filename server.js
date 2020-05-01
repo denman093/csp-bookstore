@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 5000;
 
 const routes = require('./routes/api');
 
-//const MONGODB_URI = 'mongodb+srv://denman093:denman093@cluster0-7rogf.mongodb.net/test?retryWrites=true&w=majority';
-
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/csp-bookstore-users', {
+const MONGODB_URI = 'mongodb+srv://denman093:denman093@cluster0-7rogf.mongodb.net/test?retryWrites=true&w=majority';
+//process.env.
+mongoose.connect(MONGODB_URI || 'mongodb://localhost/csp-bookstore-users', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

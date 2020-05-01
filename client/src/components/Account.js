@@ -75,7 +75,7 @@ class CreateAccount extends React.Component {
     render() {
         return (
             <Container>
-                <Jumbotron id='jumbotron'>
+                <Jumbotron id='jum botron'>
                     <h3>Create Account</h3>
                 </Jumbotron>
         <Form onSubmit={this.handleSubmit}>
