@@ -60,6 +60,7 @@ class CreateAccount extends React.Component {
             })
             .catch(() => {
                 console.log('Error occurred while sending data to server');
+                this.resetUserInput();
             })
     }
 
