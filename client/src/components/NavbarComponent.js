@@ -11,7 +11,7 @@ const NavbarComponent = () => {
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/createAccount">Create Account</Nav.Link>
-                    <Nav.Link href="/">Textbooks</Nav.Link>
+                    <Nav.Link href="/textbooks">Textbooks</Nav.Link>
                 </Nav>
                 <Nav>
                     <Nav.Link href="#login">Login</Nav.Link>
