@@ -10,7 +10,18 @@ class TextBooks extends React.Component {
         return (
             <Container>
                 <Jumbotron fluid>
-                    <h3>Testing</h3>
+                    <Row>
+                        <Col>
+                            <Image src={Logo}
+                                   alt="CSPLogo"
+                                   fluid
+                                   width={171}
+                                   height={180}/>
+                        </Col>
+                        <Col>
+                            <h2>Available Textbooks</h2>
+                        </Col>
+                    </Row>
                 </Jumbotron>
             </Container>
         );

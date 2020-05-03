@@ -12,9 +12,8 @@ const NavbarComponent = () => {
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/createAccount">Create Account</Nav.Link>
                     <Nav.Link href="/textbooks">Textbooks</Nav.Link>
-                </Nav>
-                <Nav>
-                    <Nav.Link href="#login">Login</Nav.Link>
+                    <Nav.Link href="/checkout">Checkout</Nav.Link>
+                    <Nav.Link href="/about">About</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

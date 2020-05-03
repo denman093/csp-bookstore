@@ -6,6 +6,9 @@ import './App.css';
 import NavbarComponent from "./components/NavbarComponent";
 import CreateAccount from "./components/Account";
 import TextBooks from "./components/TextBooks";
+import FooterComponent from "./components/FooterComponent";
+import Checkout from "./components/Checkout";
+import About from "./components/About";
 
 function App() {
   return (
@@ -16,8 +19,11 @@ function App() {
             <Route exact path="/" component={Home}/>
             <Route path="/createAccount" component={CreateAccount}/>
             <Route path="/textbooks" component={TextBooks}/>
+            <Route path="/checkout" component={Checkout}/>
+            <Route path="/about" component={About}/>
           </Switch>
         </Router>
+          <FooterComponent />
       </React.Fragment>
   );
 }
