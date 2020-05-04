@@ -12,9 +12,7 @@ const routes = require('./routes/api');
 //const MONGODB_URI = 'mongodb+srv://denman093:denman093@cluster0-7rogf.mongodb.net/test?retryWrites=true&w=majority';
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://denman093:abc123@ds129028.mlab.com:29028/heroku_hvmgn0bs', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
+    useMongoClient: true
 });
 
 mongoose.connection.on('connected', () => {
