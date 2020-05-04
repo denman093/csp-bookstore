@@ -1,0 +1,24 @@
+
+[
+    {
+      "id": 1,
+      "name": "Intro to Computer Science",
+      "genre": "Computers",
+      "price": "$149.99",
+      "icon": "https://i.ya-webdesign.com/images/computer-science-png-17.png"
+    },
+    {
+      "id": 2,
+      "name": "World of Cars",
+      "genre": "Cars",
+      "price": "$49.99",
+      "icon": "https://specials-images.forbesimg.com/imageserve/5d35eacaf1176b0008974b54/960x0.jpg?cropX1=790&cropX2=5350&cropY1=784&cropY2=3349"
+    },
+  {
+    "id": 3,
+    "name": "Intro to Calculus",
+    "genre": "Computers",
+    "price": "$249.99",
+    "icon": "https://online-learning.harvard.edu/sites/default/files/styles/header/public/course/bigstock-123382757-1280x640.jpg?itok=73Kijdht"
+  }
+]

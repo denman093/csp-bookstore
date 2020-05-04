@@ -14,15 +14,15 @@ function App() {
   return (
       <React.Fragment>
         <NavbarComponent />
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/createAccount" component={CreateAccount}/>
-            <Route path="/textbooks" component={TextBooks}/>
-            <Route path="/checkout" component={Checkout}/>
-            <Route path="/about" component={About}/>
-          </Switch>
-        </Router>
+            <Router>
+              <Switch>
+                <Route exact path="/" component={Home}/>
+                <Route path="/createAccount" component={CreateAccount}/>
+                <Route path="/textbooks" component={TextBooks}/>
+                <Route path="/checkout" component={Checkout}/>
+                <Route path="/about" component={About}/>
+              </Switch>
+            </Router>
           <FooterComponent />
       </React.Fragment>
   );

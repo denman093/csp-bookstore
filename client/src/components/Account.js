@@ -18,7 +18,8 @@ class CreateAccount extends React.Component {
             firstName: "",
             lastName: "",
             username: "",
-            password: ""
+            password: "",
+            posts: [ ]
         };
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
         this.handleLastNameChange = this.handleLastNameChange.bind(this);
@@ -39,12 +40,37 @@ class CreateAccount extends React.Component {
     handlePasswordChange(e) {
         this.setState({ password: e.target.value });
     }
+
+    componentDidMount = () => {
+        this.getUserPost();
+    };
+
+    getUserPost = () => {
+        axios.get('/api/getUser')
+            .then((response) => {
+                const data = response.data;
+                this.setState({posts: data});
+                console.log('Data has been received');
+            })
+            .catch(() => {
+                alert('Error getting data');
+            })
+    };
+
+    displayUsers = posts => {
+        return posts.map((post,index) => {
+            return (
+                <div key={index}>
+                    <h6>Username: {post.username}</h6>
+                    <br />
+                </div>
+            );
+        });
+    };
+
     handleSubmit(e) {
         e.preventDefault();
-        console.log('Username: ' + this.state.username +'\n' +
-            'Password: ' + this.state.password + '\n' +
-            'First Name: ' + this.state.firstName +'\n' +
-            'Last Name: ' + this.state.lastName);
+        alert('Welcome to the Site, ' + this.state.firstName + ' ' + this.state.lastName);
 
         const payload = {
             username: this.state.username,
@@ -54,7 +80,7 @@ class CreateAccount extends React.Component {
         };
 
         axios({
-            url: '/api/save',
+            url: '/api/saveUser',
             method: 'POST',
             data: payload
         })
@@ -127,10 +153,24 @@ class CreateAccount extends React.Component {
                     value={this.state.password}
                     onChange={this.handlePasswordChange}
                 />
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
+                <Row>
+                    <Col md lg={5}>
+
+                    </Col>
+                    <Col md lg={2}>
+                        <Button variant="dark" type="submit">
+                            Create Account
+                        </Button>
+                    </Col>
+                    <Col md lg={5}>
+
+                    </Col>
+                </Row>
             </Form>
+                <div className="databaseDisplay">
+                    <h4>List of Database Usernames</h4>
+                    {this.displayUsers(this.state.posts)}
+                </div>
             </Container>
         );
     }

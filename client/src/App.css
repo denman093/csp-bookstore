@@ -1,5 +1,5 @@
 Button {
-  margin-top:10px;
+  margin-top:20px;
 }
 
 .footer {
@@ -9,3 +9,13 @@ Button {
   padding:10px;
   text-align:center;
 }
+
+#textbook {
+  margin:25px;
+}
+
+.databaseDisplay {
+  margin-top:25px;
+  text-align:center;
+}
+
