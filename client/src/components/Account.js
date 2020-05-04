@@ -58,6 +58,8 @@ class CreateAccount extends React.Component {
     };
 
     displayUsers = posts => {
+        if(!posts.length) return null;
+
         return posts.map((post,index) => {
             return (
                 <div key={index}>

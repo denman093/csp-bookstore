@@ -39,6 +39,8 @@ class TextBooks extends React.Component {
     };
 
     displayTextbooks = posts => {
+        if(!posts.length) return null;
+
         return posts.map((post,index) => {
             return (
                 <Row key={index}>

@@ -6,12 +6,15 @@ const path = require('path');
 const app = express();
 
 const PORT = process.env.PORT || 5000;
+
 const routes = require('./routes/api');
 
-//MONGODB_URI = 'mongodb+srv://denman093:denman093@cluster0-7rogf.mongodb.net/test?retryWrites=true&w=majority';
+//const MONGODB_URI = 'mongodb+srv://denman093:denman093@cluster0-7rogf.mongodb.net/test?retryWrites=true&w=majority';
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:abc123@ds125453.mlab.com:25453/heroku_wzvsqc74', {
-    useMongoClient: true
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://denman093:abc123@ds129028.mlab.com:29028/heroku_hvmgn0bs', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 
 mongoose.connection.on('connected', () => {
@@ -27,6 +30,7 @@ app.use(morgan('tiny'));
 app.use('/api', routes);
 
 if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
     app.use('*', express.static('client/build'));
 
     app.get('*', (req,res) => {

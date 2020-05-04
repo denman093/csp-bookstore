@@ -57,6 +57,8 @@ class Checkout extends React.Component {
     };
 
     displayShipping = posts => {
+        if(!posts.length) return null;
+
         return posts.map((post,index) => {
             return (
                 <div key={index}>
