@@ -10,9 +10,8 @@ const routes = require('./routes/api');
 
 //MONGODB_URI = 'mongodb+srv://denman093:denman093@cluster0-7rogf.mongodb.net/test?retryWrites=true&w=majority';
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useCreateIndex: true
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:abc123@ds125453.mlab.com:25453/heroku_wzvsqc74', {
+    useMongoClient: true
 });
 
 mongoose.connection.on('connected', () => {
